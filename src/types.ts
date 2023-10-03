@@ -6,6 +6,11 @@ export interface PluginTypes {
   enabled?: boolean
 }
 
-export interface NewCollectionTypes {
-  title: string
+
+export interface File {
+  buffer: Buffer
+  filename: string
+  filesize: number
+  mimeType: string
+  tempFilePath?: string
 }

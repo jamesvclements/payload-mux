@@ -2,7 +2,8 @@ import { buildConfig } from 'payload/config';
 import path from 'path';
 import Users from './collections/Users';
 import Examples from './collections/Examples';
-import { samplePlugin } from '../../src/index'
+import { muxPlugin } from '../../src/index'
+import DefaultUploads from './collections/DefaultUploads';
 
 export default buildConfig({
   serverURL: 'http://localhost:3000',
@@ -25,7 +26,7 @@ export default buildConfig({
     },
   },
   collections: [
-    Examples, Users,
+    Examples, Users, DefaultUploads
   ],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
@@ -34,7 +35,7 @@ export default buildConfig({
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
   plugins: [
-    samplePlugin({
+    muxPlugin({
       enabled: true,
     })
   ],

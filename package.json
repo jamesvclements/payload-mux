@@ -1,9 +1,9 @@
 {
-  "name": "@payloadcms/payload-plugin-template",
+  "name": "payload-mux",
   "version": "0.0.0=1",
   "homepage:": "https://payloadcms.com",
-  "repository": "git@github.com:payloadcms/payload-plugin-template.git",
-  "description": "Blank plugin template for Payload",
+  "repository": "git@github.com:jamesvclements/payload-mux.git",
+  "description": "Store and sync Payload video collections with Mux",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
@@ -22,16 +22,17 @@
     "clean": "rimraf dist && rimraf dev/yarn.lock",
     "prepublishOnly": "yarn clean && yarn build && cd dev && yarn test"
   },
-  "author": "dev@payloadcms.com",
+  "author": "james@oldfriends.studio",
   "license": "MIT",
   "peerDependencies": {
     "payload": "^1.0.0"
   },
   "devDependencies": {
     "@payloadcms/eslint-config": "^0.0.1",
+    "@swc/jest": "^0.2.28",
+    "@types/express": "^4.17.18",
     "@typescript-eslint/eslint-plugin": "5.12.1",
     "@typescript-eslint/parser": "5.12.1",
-    "@swc/jest": "^0.2.28",
     "dotenv": "^8.2.0",
     "eslint": "^8.19.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -43,5 +44,8 @@
     "prettier": "^2.7.1",
     "react": "^18.0.0",
     "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@mux/mux-node": "^7.3.2"
   }
 }

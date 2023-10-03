@@ -27,7 +27,7 @@ export const start = async (args: { local: boolean } = { local: false }): Promis
     await seed(payload)
   }
 
-  return app.listen(3000)
+  return app.listen(process.env.PORT || 3000)
 }
 
 // when build.js is launched directly
